@@ -1,8 +1,6 @@
 
 package model;
 
-import model.Language;
-
 public class PlayerSession {
     private final long chatId;
     private Language language = Language.ENGLISH;
