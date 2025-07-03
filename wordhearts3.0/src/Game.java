@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Game {
     Scanner sc = new Scanner(System.in);
 
-    Word
+
 
     public void startGame(){
         String guess = sc.nextLine();
