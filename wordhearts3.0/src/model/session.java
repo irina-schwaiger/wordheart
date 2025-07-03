@@ -1,7 +1,7 @@
 
 package model;
 
-public class PlayerSession {
+public class session {
     private final long chatId;
     private Language language = Language.ENGLISH;
     private String currentWord;
@@ -45,7 +45,7 @@ public class PlayerSession {
     }
 
 
-    public PlayerSession(long chatId) {
+    public session(long chatId) {
         this.chatId = chatId;
     }
 
