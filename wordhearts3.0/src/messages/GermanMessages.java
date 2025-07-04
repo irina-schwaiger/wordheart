@@ -4,7 +4,7 @@ public class GermanMessages implements GameMessages {
 
         @Override
         public String getWelcomeMessage() {
-            return "👋 Willkommen bei bot.WordHearts!\n\nIch habe ein Wort mit 5 Buchstaben ausgewählt. Versuche es zu erraten!";
+            return "👋 Willkommen bei WordHearts!\n\nIch habe ein Wort mit 5 Buchstaben ausgewählt. Versuche es zu erraten!";
         }
 
         @Override

@@ -14,6 +14,9 @@ public abstract class Menu {
         this.messages = messages;
     }
 
+    public void sendStartGameFirst(long chatId) {
+        send(messages.getStartGameFirstMessage(), chatId);
+    }
     public void sendWelcome(long chatId) {
         send(messages.getWelcomeMessage(), chatId);
     }
@@ -22,9 +25,6 @@ public abstract class Menu {
         send(messages.getPlayAgainMessage(), chatId);
     }
 
-    public void sendStartGameFirst(long chatId) {
-        send(messages.getStartGameFirstMessage(), chatId);
-    }
 
     public void sendThanks(long chatId) {
         send(messages.getThanksMessage(), chatId);
@@ -46,8 +46,8 @@ public abstract class Menu {
             e.printStackTrace();
         }
     }
-
     public abstract void sendGuessResult(long chatId, String result);
 
     public abstract void sendGameOver(long chatId, boolean won, String word);
+
 }

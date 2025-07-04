@@ -3,7 +3,7 @@ package messages;
 public class SpanishMessages implements GameMessages {
     @Override
     public String getWelcomeMessage() {
-        return "👋 ¡Bienvenido a bot.WordHearts!\n\n" +
+        return "👋 ¡Bienvenido a WordHearts!\n\n" +
                 "He elegido una palabra de 5 letras. ¡Intenta adivinarla!\n" +
                 "Si ves 💔 debajo de una letra, significa que mi palabra no contiene esa letra.\n" +
                 "Si ves 🧡, la letra está en la palabra pero no en esa posición.\n" +

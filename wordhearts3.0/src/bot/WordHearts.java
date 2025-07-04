@@ -31,11 +31,13 @@ public class WordHearts extends TelegramLongPollingBot {
                 ? update.getMessage().getChatId()
                 : update.getCallbackQuery().getMessage().getChatId();
 
+
         Session session = sessions.computeIfAbsent(chatId, Session::new);
         Menu menu = menus.computeIfAbsent(
                 chatId,
                 id -> MenuFactory.createMenu(session.getLanguage(), this)
         );
+//        menu.sendStartGameFirst(chatId);
 
         if (update.hasMessage() && "/start".equals(update.getMessage().getText())) {
             showLanguageMenu(chatId);
@@ -57,10 +59,8 @@ public class WordHearts extends TelegramLongPollingBot {
             return;
         }
 
-        if (update.hasMessage()) {
-            menu.sendStartGameFirst(chatId);
-        }
     }
+
 
     private void showLanguageMenu(long chatId) {
         InlineKeyboardMarkup keyboard = InlineKeyboardMarkup.builder()
