@@ -7,33 +7,33 @@ public class GameEngine {
         guess  = guess.toLowerCase();
         target = target.toLowerCase();
 
-        StringBuilder result = new StringBuilder();
+        String[] result = new String[guess.length()];
         boolean[] usedTarget = new boolean[target.length()];
+
 
         for (int i = 0; i < guess.length(); i++) {
             if (i < target.length() && guess.charAt(i) == target.charAt(i)) {
-                result.append("💚");
+                result[i] = "💚";
                 usedTarget[i] = true;
             } else {
-                result.append("_"); // Platzhalter
+                result[i] = null;
             }
         }
 
-
         for (int i = 0; i < guess.length(); i++) {
-            if (result.charAt(i) != '_') continue;
+            if (result[i] != null) continue;
 
             char c = guess.charAt(i);
             int idx = indexOfUnused(target, c, usedTarget);
             if (idx >= 0) {
-                result.setCharAt(i, '🧡');
+                result[i] = "🧡";
                 usedTarget[idx] = true;
             } else {
-                result.setCharAt(i, '💔');
+                result[i] = "💔";
             }
         }
 
-        return result.toString();
+        return String.join("", result);
     }
 
     private static int indexOfUnused(String target, char c, boolean[] used) {
@@ -46,7 +46,9 @@ public class GameEngine {
     }
 
     public static boolean isCorrect(String feedback) {
-        return feedback.chars()
-                .allMatch(ch -> ch == '💚');
+        final int greenCp = 0x1F49A;
+        return feedback
+                .codePoints()
+                .allMatch(cp -> cp == greenCp);
     }
 }
