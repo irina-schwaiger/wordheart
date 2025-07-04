@@ -10,7 +10,6 @@ public class GameEngine {
         StringBuilder result = new StringBuilder();
         boolean[] usedTarget = new boolean[target.length()];
 
-        // 1) Grünen Herz-Fall
         for (int i = 0; i < guess.length(); i++) {
             if (i < target.length() && guess.charAt(i) == target.charAt(i)) {
                 result.append("💚");
