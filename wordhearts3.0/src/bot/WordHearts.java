@@ -56,7 +56,6 @@ public class WordHearts extends TelegramLongPollingBot {
         if (update.hasMessage() && session.isGameActive()) {
             String guess = update.getMessage().getText().trim();
             handleGuess(chatId, session, menu, guess);
-            return;
         }
 
     }
