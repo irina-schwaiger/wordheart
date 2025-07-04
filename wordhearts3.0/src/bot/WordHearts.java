@@ -136,11 +136,11 @@ public class WordHearts extends TelegramLongPollingBot {
 
     @Override
     public String getBotUsername() {
-        return "WordHearts";
+        return System.getenv("BOT_USERNAME");
     }
 
     @Override
     public String getBotToken() {
-        return System.getenv("8032955664:AAFTFN0YAA4Fn0EvDYXxz4hTUb6z7l5dlC0");
+        return System.getenv("BOT_TOKEN");
     }
 }
